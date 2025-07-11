@@ -1,0 +1,26 @@
+.card__spotlight
+  position: relative
+  border-radius: 1.5rem
+  border: 1px solid #222
+  background-color: #170d27
+  padding: 2rem
+  overflow: hidden
+  --mouse-x: 50%
+  --mouse-y: 50%
+  --spotlight-color: rgba(243, 6, 174, 0.63)
+
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%)
+    opacity: 0
+    transition: opacity 0.5s ease
+    pointer-events: none
+
+.card__spotlight:hover::before,
+.card__spotlight:focus-within::before
+  opacity: 0.6

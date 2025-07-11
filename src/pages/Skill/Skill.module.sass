@@ -1,0 +1,53 @@
+.progress-bar
+  position: relative
+  width: 100%
+  min-width: 400px
+  height: 5px
+  background-color: #333
+  border-radius: 5px
+  overflow: visible
+
+  .progress-fill
+    width: 0
+    height: 100%
+    background-color: #0ef
+    border-radius: 5px
+
+  .percent-tag
+    position: absolute
+    top: -34px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: #f44292
+    color: white
+    border-radius: 5px
+    font-weight: bold
+    font-size: 14px
+    white-space: nowrap
+    padding: 2px .5rem
+    line-height: 17px
+
+    &::after
+      content: ""
+      position: absolute
+      bottom: -9.5px
+      left: 50%
+      transform: translateX(-50%)
+      border: 6px solid transparent
+      border-top-color: #f44292
+
+.gradient-icon
+  background: linear-gradient(180deg, #ff3700, #013bf8)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  display: inline-block
+
+
+.skill-item
+  padding-top: 1.4rem
+
+.skill-title
+  font-size: 1rem
+  color: #0ef
+  margin: 0 0 .2687rem
+

@@ -1,0 +1,61 @@
+@use '../../assets/styles/variables' as *
+@use '../../assets/styles/mixins' as *
+
+
+.header--scrolled
+  background-color: hsla(0, 0%, 100%, 0.15)
+  backdrop-filter: blur(0.75em)
+  -webkit-backdrop-filter: blur(0.75em)
+  box-shadow: 0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1)
+
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  padding: 1.5rem 2rem
+  z-index: 999
+  transition: background-color 0.3s ease, box-shadow 0.3s ease
+  background-color: transparent
+
+  .logo
+    font-size: 1.5625rem
+    font-weight: 600
+    color: var(--text)
+    cursor: default
+    position: relative
+    @include no-decoration
+    @include animated-opacity
+    @include animation__slideRight
+
+
+  .nav__link
+    display: inline-block
+    font-size: 1.5625rem
+    color: var(--text)
+    @include no-decoration
+    font-weight: 500
+    margin-left: 1.0938rem
+    transition: .3s
+    position: relative
+    @include animation__slideTop
+    -webkit-animation-delay: calc(.2s * var(--i))
+    animation-delay: calc(.2s * var(--i))
+
+    &::before
+      content: ''
+      position: absolute
+      top: 1.758rem
+      left: 0
+      width: 0
+      height: 3px
+      background-color: #333
+      border-radius: 5px
+      transition: width 0.3s ease
+
+    &:hover::before
+      width: 100%
+
+
+

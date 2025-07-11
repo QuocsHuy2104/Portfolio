@@ -1,0 +1,80 @@
+@use '../../assets/styles/variables' as *
+@use '../../assets/styles/mixins' as *
+
+.home__content
+  h3
+    font-size: 2rem
+    font-weight: 700
+    @include animated-opacity
+    @include animation__slideBottom
+    -webkit-animation-delay: 0.7s
+    animation-delay: 0.7s
+
+
+    &:nth-of-type(2)
+      margin-bottom: 1.875rem
+      @include animation__slideTop
+      -webkit-animation-delay: .7s
+      animation-delay: .7s
+
+    span
+      color: $main__color
+
+
+  h1
+    font-size: 3.5rem
+    font-weight: 700
+    margin: -0.1875rem 0
+    @include animated-opacity
+    @include animation__slideRight
+    -webkit-animation-delay: 1s
+    animation-delay: 1s
+
+  p
+    font-size: 1.25rem
+    @include animated-opacity
+    @include animation__slideLeft
+    -webkit-animation-delay: 1s
+    animation-delay: 1s
+
+
+  .home__sci
+    a
+      @include no-decoration
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      width: 2.5rem
+      height: 2.5rem
+      background: transparent
+      border: 0.125rem solid $main__color
+      border-radius: 50%
+      font-size: 20px
+      color: $main__color
+      margin: 1.875rem 0.9375rem 1.875rem 0
+      opacity: 0
+      transition: .5s
+      @include  animation__slideLeft
+      -webkit-animation-delay: calc(.2s *var(--i))
+      animation-delay: calc(.2s *var(--i))
+
+      &:hover
+        background: var(--background)
+        color: var(--text)
+        box-shadow: 0 0 1.25rem var(--box-shadow-color)
+
+  .btn__box
+    display: inline-block
+    color: var(--text)
+    padding: 12px 25px
+    @include no-decoration
+    @include background__glass
+    @include animated-opacity
+    @include animation__slideTop
+    background: var(--glass_button)
+    transition: .3s linear
+    -webkit-animation-delay: 1s
+    animation-delay: 1s
+
+    &:hover
+      box-shadow: 0 0 10px #f06292, 0 0 20px #f06292, 0 0 40px #f06292, 0 0 60px #f06292
