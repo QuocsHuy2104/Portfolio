@@ -1,4 +1,4 @@
-import {Box, Link} from "@mui/material";
+import {Box, Link, Typography} from "@mui/material";
 import SpotlightCard from "../../components/Card/SpotlightCard/SpotlightCard.tsx";
 import type {EmblaOptionsType} from "embla-carousel";
 import EmblaCarousel from "../../components/Carousel/EmblaCarousel.tsx";
@@ -37,9 +37,19 @@ const MyProject = () => {
             github: "https://github.com/yourusername/your-repo"
         }]
     return (
-        <Box height='70vh' className='fade-in' display='flex' justifyContent='center' alignItems='center'>
-            <EmblaCarousel slides={my__projects} options={OPTIONS}/>
+
+        <Box className='fade-in' mt={10} width='100%'>
+            <Box width='100%' textAlign='center' mb={9}>
+                <Typography fontSize={{xs: '2rem', sm: '3rem', md: '3.75rem'}} fontWeight={600}>
+                    My <span style={{color: "#f06292"}}>Projects</span>
+                </Typography>
+            </Box>
+
+            <Box display='flex' justifyContent='center' alignItems='center'>
+                <EmblaCarousel slides={my__projects} options={OPTIONS}/>
+            </Box>
         </Box>
+
     )
 }
 
